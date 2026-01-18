@@ -1,4 +1,4 @@
-# QIDI-Tech X-Plus 3 Professional Config
+# QIDI-Tech X-Plus 3 Stock Config
 
 ## Purpose
 
