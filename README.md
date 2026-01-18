@@ -44,7 +44,6 @@ Lower Z‑lift reduces unnecessary travel time and mechanical wear.
 -  **Chamber Heating is now using PID and can be PID Calibrated**
 -  **Speed up homing (40mm/s => 100mm/s)**
 - **Improved sensitivity during homing, homes with less noise**
-- **Uses back-left corner of the movement envelope**
 - **Z Homing adjustment for faster movement**
 - **Saftey first changes to some Macros to ensure boundry checks are considered**
 - **Improved Filament Load and Unload sequence improving reliablity**
