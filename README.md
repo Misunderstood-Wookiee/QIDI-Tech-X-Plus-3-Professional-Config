@@ -3,6 +3,7 @@
 ![Qidi X‑Plus 3](https://img.shields.io/badge/Qidi-X--Plus%203-orange)
 ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
 ![Docs](https://img.shields.io/badge/docs-online-blueviolet)
+![Validate Klipper Macros](https://github.com/Misunderstood-Wookiee/QIDI-Tech-X-Plus-3-Professional-Config/actions/workflows/validate_macros.yml/badge.svg?branch=Beta)
 
 # QIDI-Tech X-Plus 3 Professional Config
 
