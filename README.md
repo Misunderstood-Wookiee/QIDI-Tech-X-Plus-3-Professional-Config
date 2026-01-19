@@ -162,4 +162,4 @@ This helps keep the project stable and contributor‑friendly.
 
 
 ## Branch Information
-This is the `stable` branch, containing production-tested configurations optimized for reliability and performance on the QIDI X-Plus 3 model. 
+This is the `stable beta testing` branch, containing production-tested configurations optimised with observed normal operation reliability (however not final) and performance on the QIDI X-Plus 3 model. 
