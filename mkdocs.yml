@@ -1,0 +1,22 @@
+site_name: QIDI-Tech X-Plus 3 Professional Configuration Guide
+site_description: Comprehensive guide for configuring and using the QIDI-Tech X-Plus 3 3D printer with my configuration set.
+site_url: https://your-github-pages-url
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+nav:
+  - Overview: docs/overview.md
+  - PRINT_START: docs/print_start.md
+  - PAUSE & RESUME: docs/pause_resume.md
+  - CANCEL_PRINT: docs/cancel_print.md
+  - SMART_PARK: docs/smart_park.md
+  - Filament Management: docs/filament_management.md
+  - Purge System: docs/purge_system.md
+  - Troubleshooting: docs/troubleshooting.md
+  - Contributing: docs/contributing.md
+  - Maintainers: docs/maintainers.md
+  - Support: docs/support.md

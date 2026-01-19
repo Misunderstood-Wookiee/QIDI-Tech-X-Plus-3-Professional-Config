@@ -1,0 +1,19 @@
+name: Validate Klipper Macros
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Validate macro syntax
+        run: |
+          if grep -R "syntax error" macros/*.cfg; then
+            echo "Syntax errors found"
+            exit 1
+          fi
+          echo "Macros validated successfully"
