@@ -1,5 +1,21 @@
 # Changelog
 All notable changes to this project will be documented here.
+## [1.1.8] - Bug fixes for Filament Mangement (thanks to qidi firmware qwirks again!) & Debugging Code along with QOL
+### Added
+- New FILAMENT_LOAD and FILAMENT_UNLOAD macros to replace M604/M603 due to QIDI firmware parameter restrictions.
+- Material-aware temperature system with centralized lookup macro `_GET_MATERIAL_TEMPS`.
+- Fluidd-friendly preset macros for PLA, PETG, ABS, ASA, and Nylon (load and unload).
+- QIDI-compatible FILAMENT_DEBUG macro using action_respond_info.
+- Optional M603/M604 wrapper macros for UI/LCD compatibility.
+
+### Improved
+- Documentation updated to reflect QIDI firmware limitations and new macro architecture.
+- Clear descriptions added to all preset macros for better UI clarity.
+- Material table and workflow documentation rewritten for clarity and contributor friendliness.
+
+### Fixed
+- Issue where M603/M604 always used default temps due to QIDI blocking parameter passing to M-code macros.
+- Removed unsupported RESPOND command from debug macro.
 
 ## [1.1.5] - Tip Forming & Material-aware profiles for Filament Mangement
 ### Added
