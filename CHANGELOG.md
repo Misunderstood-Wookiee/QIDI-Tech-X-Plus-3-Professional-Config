@@ -1,7 +1,31 @@
 # Changelog
 All notable changes to this project will be documented here.
+## [1.1.9] - Bug fixes for Filament Mangement (thanks to qidi firmware qwirks again!) & Debugging Code along with QOL
+### Added
+
+- Probe  `lift_speed: 10` for snappier multi‑sample probing.
+- LIGHT_ON, LIGHT_OFF, LIGHT_TOGGLE, and LIGHT_BLINK macros for full manual and automated control.
+- Automatic lighting integration into PRINT_START, PRINT_END, FILAMENT_LOAD, and FILAMENT_UNLOAD.
+- Blink‑based visual cues for print completion, filament operations, and optional pause/cancel events.
+- Documentation for the chamber lighting system and its workflow integration.
+
+
+### Improved
+
+- README updated to reflect resonsibility of end user.
+- Materials Doc updated to clarify how to add new WebUI load/unload macro buttons.
+- Unified lighting behavior across all major macros for consistent user experience.
+- Enhanced filament workflow feedback with visual blink signals.
+- PRINT_END now provides a clear visual completion indicator.
+- Overall macro suite now feels more cohesive and responsive to user interaction.
+
+
+### Fixed
+- None specific to this update, but lighting behavior is now fully deterministic and no longer dependent on manual toggling.
+
 ## [1.1.8] - Bug fixes for Filament Mangement (thanks to qidi firmware qwirks again!) & Debugging Code along with QOL
 ### Added
+
 - New FILAMENT_LOAD and FILAMENT_UNLOAD macros to replace M604/M603 due to QIDI firmware parameter restrictions.
 - Material-aware temperature system with centralized lookup macro `_GET_MATERIAL_TEMPS`.
 - Fluidd-friendly preset macros for PLA, PETG, ABS, ASA, and Nylon (load and unload).
@@ -9,16 +33,19 @@ All notable changes to this project will be documented here.
 - Optional M603/M604 wrapper macros for UI/LCD compatibility.
 
 ### Improved
+
 - Documentation updated to reflect QIDI firmware limitations and new macro architecture.
 - Clear descriptions added to all preset macros for better UI clarity.
 - Material table and workflow documentation rewritten for clarity and contributor friendliness.
 
 ### Fixed
+
 - Issue where M603/M604 always used default temps due to QIDI blocking parameter passing to M-code macros.
 - Removed unsupported RESPOND command from debug macro.
 
 ## [1.1.5] - Tip Forming & Material-aware profiles for Filament Mangement
 ### Added
+
 - Material‑aware filament handling system with automatic temperature selection
   (`MATERIAL=PLA|PETG|ABS|ASA|NYLON`).
 - Tip‑shaping unload sequence (push → slow retract → fast retract) for clean,
@@ -29,12 +56,14 @@ All notable changes to this project will be documented here.
 - New helper macro `qidi_helpers.cfg` for handling shared macro functionality.
 
 ### Improved
+
 - M604 and M603 rewritten for clarity, safety, and
   contributor‑friendly tuning.
 - Documentation updated to reflect new material profiles, tip‑shaping behavior,
   and user‑tunable variables.
 
 ### Fixed
+
 - Removed redundant temperature logic across load/unload macros.
 - Ensured all filament routines remain QIDI‑safe with no auto‑resume or
   double‑restore behavior.
@@ -42,6 +71,7 @@ All notable changes to this project will be documented here.
 ## [1.1.0] – Finalized Qidi‑Safe Pause/Resume System
 
 ### Fixed
+
 - RESUME no longer stalls after returning to the paused layer.
 - Corrected resume primitive: now calls `BASE_RESUME` (the actual Klipper/Qidi resume handler).
 - Removed conflicting `RESTORE_GCODE_STATE NAME=PAUSE` logic.

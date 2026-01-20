@@ -40,7 +40,7 @@ This macro:
 
 1. Converts the material name to uppercase
 2. Looks up the correct load/unload temperatures
-3. Stores them in internal variables
+3. Stores them in internal variables in a seperate macro that exists just hold these values `material_temps`, it does this workaround to protect against a  potential infinite loop that Klipper will prevent thus prevent this function working as intended.
 4. Falls back to user defaults if the material is unknown
 This keeps the logic centralized and easy to maintain.
 
@@ -54,3 +54,18 @@ Contributors can add new materials by editing the `_GET_MATERIAL_TEMPS` macro an
     {% set unload = unloadtemp %}
 ```
 located inside the qidi_helpers script.
+
+To get your new material to become a WebUI macro button in Mainsail/Fluidd you can extend the *Material Macros to Load/Unload specific materials* section inside the same qidi_helpers.cfg
+
+Example:
+```
+[gcode_macro LOAD_MATERIALEXAMPLE]
+description: Load MATERIALEXAMPLE using FILAMENT_LOAD with MATERIALEXAMPLE material profile
+gcode:
+    FILAMENT_LOAD MATERIAL=MATERIALEXAMPLE
+
+[gcode_macro UNLOAD_MATERIALEXAMPLE]
+description: Unload MATERIALEXAMPLE using FILAMENT_UNLOAD with MATERIALEXAMPLE material profile
+gcode:
+    FILAMENT_UNLOAD MATERIAL=MATERIALEXAMPLE
+```
