@@ -100,8 +100,8 @@ This ensures:
 - No Qidi auto‑resume behavior  
 
 ### 🔄 Filament Management
-- FILAMENT_LOAD: staged fast/slow loading  
-- FILAMENT_UNLOAD: staged slow/fast unloading  
+- Material‑Aware + Tip Shaping (no cutting required)
+- Staged fast/slow loading/unloading 
 - User‑tunable lengths  
 
 ### 🧪 LINE_PURGE Integration
