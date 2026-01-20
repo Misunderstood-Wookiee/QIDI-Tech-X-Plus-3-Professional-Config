@@ -1,6 +1,9 @@
+version: 1
 name: Bug Report
-description: Report a problem with the macro suite
-labels: [bug]
+about: Report a problem with the macros
+title: "[Bug] "
+labels: bug
+assignees: Misunderstood-Wookiee
 body:
   - type: textarea
     attributes:
