@@ -1,7 +1,7 @@
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Klipper](https://img.shields.io/badge/klipper-compatible-blue)
 ![Qidi X‑Plus 3](https://img.shields.io/badge/Qidi-X--Plus%203-orange)
-![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)Copied!   
 ![Docs](https://img.shields.io/badge/docs-online-blueviolet)
 ![Validate Klipper Macros](https://github.com/Misunderstood-Wookiee/QIDI-Tech-X-Plus-3-Professional-Config/actions/workflows/validate_macros.yml/badge.svg?branch=Beta)
 
