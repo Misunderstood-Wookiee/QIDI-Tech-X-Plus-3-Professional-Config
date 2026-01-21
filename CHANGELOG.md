@@ -1,27 +1,60 @@
 # Changelog
 All notable changes to this project will be documented here.
-## [1.1.9] - Bug fixes for Filament Mangement (thanks to qidi firmware qwirks again!) & Debugging Code along with QOL
+## [1.2.0] - Bug fixes for Filament Mangement (thanks to qidi klipper firmware qwirks), Debbuging helpers and much needed QoL optimisations.
+
 ### Added
 
 - Probe  `lift_speed: 10` for snappier multi‑sample probing.
-- LIGHT_ON, LIGHT_OFF, LIGHT_TOGGLE, and LIGHT_BLINK macros for full manual and automated control.
-- Automatic lighting integration into PRINT_START, PRINT_END, FILAMENT_LOAD, and FILAMENT_UNLOAD.
-- Blink‑based visual cues for print completion, filament operations, and optional pause/cancel events.
-- Documentation for the chamber lighting system and its workflow integration.
-
+- Full chamber‑lighting macro suite (LIGHT_ON, LIGHT_OFF, LIGHT_TOGGLE, LIGHT_BLINK).
+- Integrated lighting cues into PRINT_START, PRINT_END, FILAMENT_LOAD, and FILAMENT_UNLOAD.
+- Integrated buzzer cues into PRINT_START, PRINT_END, FILAMENT_LOAD, FILAMENT_UNLOAD, PAUSE, RESUME, and CANCEL_PRINT.
+- Buzzer macro suite (BEEP, BEEP_LONG, BEEP_REPEAT) for clear audible feedback.
+- Light + sound confirmation patterns for filament operations and print completion.
+- `macros/qidi_debugger.cfg`; the start of this projects custom shared debugging suite of scripts _(currently it hold a macro to debug material temp selection)_.
+- Optional wait for bed expansion just before G29 in PRINT_START 
 
 ### Improved
 
 - README updated to reflect resonsibility of end user.
-- Materials Doc updated to clarify how to add new WebUI load/unload macro buttons.
-- Unified lighting behavior across all major macros for consistent user experience.
-- Enhanced filament workflow feedback with visual blink signals.
-- PRINT_END now provides a clear visual completion indicator.
-- Overall macro suite now feels more cohesive and responsive to user interaction.
+- Documentation in docs/materials.md to reflect the users ability to add/modify the WebUI Load/Unload temprature presets for materials.
+- Cleaned and consolidated lighting macros into a dedicated, maintainable block.
+- Replaced polar screw coordinates with accurate XY screw positions for more reliable manual bed leveling.
+- Updated TMC2209 recommendations for X/Y, Z, and extruder to improve torque, accuracy, and high‑speed stability.
+- Revised motion configuration guidance to replace unrealistic stock values with physically achievable, input‑shaper‑friendly limits.
+- Reduced ringing and improved dimensional accuracy by recommending a lower square_corner_velocity.
+- Overall print workflow now provides clearer visual and audible state feedback.
+- Sensorless homing reliability
+  - Added recommended diag_threshold tuning range (90–120) for both X and Y.
+  - Improved stall detection consistency across varying belt tensions.
+  - Reduced false triggers and over‑travel events.
+  - Macro consistency
 
+
+
+### Changed
+- Y‑axis travel limits
+  - Updated position_min from ‑24 to 0 to avoid the mechanical creak zone around Y‑20.
+  - Ensures all macros operate within safe, positive coordinates.
+  - Coordinate system cleanup
+- All macros and motion routines now operate strictly within positive X/Y space.
+- Eliminates accidental negative‑axis travel and improves safety.
+- SMART_PARK macro
+  - Added a safe, center‑bed park routine (X140 Y140) with configurable Z‑lift.
+  - Integrated into PAUSE, CANCEL_PRINT, and PRINT_END workflows
+
+
+
+### Removed / Reverted
+
+- Motion‑activated lighting system (temporarily removed due to inconsistent behavior on QIDI‑locked firmware).
+- All motion‑triggered light logic reverted to ensure predictable, stable operation.
 
 ### Fixed
-- None specific to this update, but lighting behavior is now fully deterministic and no longer dependent on manual toggling.
+
+- Ensured all lighting and buzzer macros operate consistently across all print states.
+- Corrected screw positions in screws_tilt_adjust to probe near actual bed screw locations.
+- While stock configuration allows for `stepper_y` to reach a shocking position_min: -24 it will crash into the front Y stops a more this has been fixed by setting  `position_min: -18` which is a more sensible value which does not over-extend the axis limits and should provide enough for wipers or other accessories.
+
 
 ## [1.1.8] - Bug fixes for Filament Mangement (thanks to qidi firmware qwirks again!) & Debugging Code along with QOL
 ### Added
