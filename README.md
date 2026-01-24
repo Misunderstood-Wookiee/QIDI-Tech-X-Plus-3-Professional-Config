@@ -177,7 +177,7 @@ This helps keep the project stable and contributor‑friendly.
 
 ## Branch Information
 
-### This is the `Beta` branch, containing pre-production configuration that is observed under normal operation and tested to work however not final and may potentially be unstable but contains a tested stable beta for further feedback.
+### This is the `Nightly` branch, containing pre-production configuration that is observed under normal operation and tested to work however not final and may potentially be unstable but contains a tested stable beta for further feedback.
 ---
 
 #### Remember, you take sole responsibility for modificaitons to your machine. While our best efforts go towards making it as stable as possible we do not take blame damages which may arise!
