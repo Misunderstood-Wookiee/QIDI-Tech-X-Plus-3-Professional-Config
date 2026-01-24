@@ -122,6 +122,14 @@ This ensures:
 The under-utilised chamber light strip is now a functional tool.
 - Integration into PRINT_START, PRINT_END, FILAMENT_LOAD/UNLOAD, PAUSE, RESUME, etc as a status indicator
 
+### 🧪 Moisture Diagnostic
+
+- Material-aware moisture testing using adaptive temperatures
+- Single or multi-speed extrusion tests for comprehensive diagnostics
+- Automatic logging with timestamps for tracking filament condition
+- Safe nozzle parking before and after testing
+- Configurable test parameters for different testing scenarios
+
 ---
 
 ## 📂 Macro Overview
@@ -137,6 +145,7 @@ The under-utilised chamber light strip is now a functional tool.
 | `FILAMENT_LOAD` | Staged filament loading |
 | `FILAMENT_UNLOAD` | Staged filament unloading |
 | `LINE_PURGE` | Adaptive purge line (external macro) |
+| `MOISTURE_DIAGNOSTIC` | Filament moisture testing with material-aware temps |
 
 ---
 

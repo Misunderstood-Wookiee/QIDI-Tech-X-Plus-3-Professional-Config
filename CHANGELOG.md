@@ -1,5 +1,34 @@
 # Changelog
 All notable changes to this project will be documented here.
+
+## [Unreleased] - 2026-01-24
+
+### Added
+
+- `MOISTURE_DIAGNOSTIC` macro for filament moisture testing
+  - Material-aware temperature control using `_GET_MATERIAL_TEMPS`
+  - Single-speed and multi-speed diagnostic modes
+  - Automatic logging to `/tmp/moisture_check.log` with timestamps
+  - Safe nozzle parking before and after tests
+  - Configurable extrusion lengths, feedrates, and park positions
+- Documentation for moisture diagnostic system in `docs/moisture_diagnostic.md`
+
+### Improved
+
+- Documentation sidebar (`docs/_sidebar.md`) reorganized into logical categories
+  - **Getting Started**: Overview and Material Configuration
+  - **Core Print Macros**: PRINT_START, PAUSE & RESUME, CANCEL_PRINT
+  - **Utility Macros**: SMART_PARK, Purge System, Lighting System
+  - **Filament Operations**: Filament Management, Moisture Diagnostic
+  - **Help & Resources**: Troubleshooting, Support
+  - **Contributing**: Contributing Guidelines, Maintainers
+
+### Fixed
+
+- Jinja2 template syntax error in `MOISTURE_DIAGNOSTIC` macro
+  - Corrected RUN_SHELL_COMMAND formatting to use single curly braces instead of double
+  - Fixed "expected token ':', got '}'" error during macro loading
+
 ## [1.2.2] - Bug fixes for Filament Mangement (thanks to qidi klipper firmware qwirks), Debbuging helpers and much needed QoL optimisations.
 
 ### Added
