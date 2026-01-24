@@ -1,23 +1,94 @@
-site_name: QIDI-Tech X-Plus 3 Professional Configuration Guide
-site_description: Comprehensive guide for configuring and using the QIDI-Tech X-Plus 3 3D printer with my configuration set.
-site_url: https://your-github-pages-url
+site_name: QIDI X-Plus 3 Professional Configuration
+site_description: Enhanced, modular Klipper configuration for the QIDI X-Plus 3 3D printer with advanced macros and optimizations.
+site_url: https://misunderstood-wookiee.github.io/QIDI-Tech-X-Plus-3-Professional-Config/
+site_author: Misunderstood-Wookiee
+repo_url: https://github.com/Misunderstood-Wookiee/QIDI-Tech-X-Plus-3-Professional-Config
+repo_name: QIDI-Tech-X-Plus-3-Professional-Config
+
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.tracking
+    - navigation.instant
     - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/object/apply:material.extensions.emoji.twemoji
+      emoji_generator: !!python/object/apply:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+
 nav:
-  - Overview: docs/overview.md
-  - PRINT_START: docs/print_start.md
-  - PAUSE & RESUME: docs/pause_resume.md
-  - CANCEL_PRINT: docs/cancel_print.md
-  - SMART_PARK: docs/smart_park.md
-  - Filament Management: docs/filament_management.md
-  - Purge System: docs/purge_system.md
-  - Lighting System: docs/lighting_system.md
-  - Troubleshooting: docs/troubleshooting.md
-  - Contributing: docs/contributing.md
-  - Maintainers: docs/maintainers.md
-  - Support: docs/support.md
+  - Home: index.md
+  - Getting Started:
+    - Overview: docs/overview.md
+    - Installation: docs/installation.md
+    - Material Guide: docs/material.md
+  - Core Macros:
+    - PRINT_START: docs/print_start.md
+    - PRINT_END: docs/print_end.md
+    - PAUSE & RESUME: docs/pause_resume.md
+    - CANCEL_PRINT: docs/cancel_print.md
+  - Features:
+    - SMART_PARK: docs/smart_park.md
+    - Filament Management: docs/filament_management.md
+    - Purge System: docs/purge_system.md
+    - Lighting System: docs/lighting_system.md
+    - X-Twist Compensation: docs/x_twist.md
+    - Adaptive Mesh: docs/adaptive_mesh.md
+  - Hardware:
+    - Probe Configuration: docs/probe.md
+    - Runout Sensor: docs/runout_sensor.md
+    - Stepper Motors: docs/steppers.md
+    - TMC2209 Drivers: docs/tmc2209.md
+  - Advanced:
+    - Screw Tilt Adjustment: docs/screw_tilt.md
+    - Calibration: docs/calibration.md
+  - Support & Troubleshooting:
+    - Troubleshooting: docs/troubleshooting.md
+    - FAQ: docs/faq.md
+  - Community:
+    - Contributing: docs/contributing.md
+    - Maintainers: docs/maintainers.md
+    - Support: docs/support.md
+    - Changelog: CHANGELOG.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Misunderstood-Wookiee
+      name: GitHub
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/
+      name: Discord
+
+copyright: Copyright &copy; 2024 - Misunderstood-Wookiee
