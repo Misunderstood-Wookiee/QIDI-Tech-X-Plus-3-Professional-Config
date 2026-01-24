@@ -48,11 +48,13 @@ This keeps the logic centralized and easy to maintain.
 
 Contributors can add new materials by editing the `_GET_MATERIAL_TEMPS` macro and adding a new block:
 
+{% raw %}
 ```
 {% elif mat == "materialname" %}
     {% set load = loadtemp %}
     {% set unload = unloadtemp %}
 ```
+{% endraw %}
 located inside the qidi_helpers script.
 
 To get your new material to become a WebUI macro button in Mainsail/Fluidd you can extend the *Material Macros to Load/Unload specific materials* section inside the same qidi_helpers.cfg
