@@ -16,6 +16,7 @@ nav:
   - SMART_PARK: docs/smart_park.md
   - Filament Management: docs/filament_management.md
   - Purge System: docs/purge_system.md
+  - Lighting System: docs/lighting_system.md
   - Troubleshooting: docs/troubleshooting.md
   - Contributing: docs/contributing.md
   - Maintainers: docs/maintainers.md
