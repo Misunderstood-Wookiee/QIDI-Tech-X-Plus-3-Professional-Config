@@ -1,5 +1,18 @@
 # Changelog
 All notable changes to this project will be documented here.
+## [1.2.2] - Bug fixes for Filament Mangement (thanks to qidi klipper firmware qwirks), Debbuging helpers and much needed QoL optimisations.
+
+### Added
+
+- Input Shaper section `[input_shaper]` for manual tuning.
+
+### Improved
+- TMC2209.cfg has some more in-line comments.
+
+### Removed / Reverted
+
+- Max Printer Speed reverted to factory 600 (might as well allow full range for travel moves) the changes to acceleration remain optimised.
+
 ## [1.2.0] - Bug fixes for Filament Mangement (thanks to qidi klipper firmware qwirks), Debbuging helpers and much needed QoL optimisations.
 
 ### Added
