@@ -1,9 +1,42 @@
 # Changelog
 All notable changes to this project will be documented here.
 
-## [Unreleased] - 2026-01-24
+## [Unreleased] - 2026-01-29
+
+### Changed
+
+- Bed mesh configuration optimized in `Functionality/Adaptive_Mesh.cfg`:
+  - Leveling speed reduced from 300mm/s to 150mm/s for improved accuracy
+  - Horizontal move Z height lowered from 5mm to 2.6mm to reduce probing time
+  - Mesh area expanded: min from (20,20) to (20,8), max from (260,260) to (270,265) for better coverage
+  - `LINE_PURGE` macro purge height adjusted from 0.4mm to 0.3mm for better bed adhesion and first layer quality
+- Probe configuration refined in `Hardware/Probe.cfg`:
+  - Sample retract distance optimized from 3.0mm to 0.7mm for faster probing cycles
+  - Z-offset reverted to 0.0mm (from 1.549mm calibration)
+- Stepper motor homing optimized in `Hardware/Steppers.cfg`:
+  - X-axis homing speed reduced from 100mm/s to 40mm/s for improved sensorless homing reliability
+  - Y-axis configuration corrected: position_endstop from 298 to -18, position_max from 298 to 280, homing_speed from 100 to 40mm/s, and homing_positive_dir from True to False
+  - Z-axis homing refined: position_min from -6 to -2, homing_speed from 15 to 10mm/s, homing_retract_dist from 3.0 to 8.0mm, second_homing_speed from 2 to 5mm/s
+- TMC2209 motor driver currents adjusted in `Hardware/TMC2209.cfg`:
+  - Extruder run_current reduced from 1.1A to 0.714A to prevent overheating
+  - Z-axis run_current reduced from 0.45A to 0.285A for quieter operation
+  - Y-axis driver_SGTHRS lowered from 97 to 85 for more sensitive sensorless homing
+- Heater configurations refined in `printer.cfg`:
+  - Heated bed min_temp adjusted from -100°C to -50°C for safety
+  - Chamber heater max_delta reduced from 1.0 to 0.5 for tighter temperature control
+- Movement configuration optimized in `printer.cfg`:
+  - Z-axis max velocity increased from 15mm/s to 20mm/s for faster Z movements
+- Resonance tester configuration improved in `printer.cfg`:
+  - Probe point Z height lowered from 20mm to 10mm for better measurement accuracy
+  - Added accel_per_hz: 75 for improved resolution
+  - Added sweeping_period: 0 for continuous sweep mode
+  - Added max_smoothing: 0.5 to limit excessive smoothing
+- Idle timeout reduced from 86400s (24 hours) to 5400s (90 minutes) for better power management in `printer.cfg`
 
 ### Added
+
+- G-code arc support enabled in `printer.cfg` with 1.0mm resolution for smoother curved movements
+- Response system activated in `printer.cfg` with default echo type for better macro feedback
 
 - `MOISTURE_DIAGNOSTIC` macro for filament moisture testing
   - Material-aware temperature control using `_GET_MATERIAL_TEMPS`
